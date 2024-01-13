@@ -1,0 +1,18 @@
+gpt_model: gpt-3.5-turbo
+temperature: 0.9
+max_tokens: 1000
+chunk_size: 500
+similarity_top_k: 5
+articles_to_search: 5
+llm_system_role:
+  "As a chatbot, your goal is to respond to the user's question respectfully and concisely.\
+  You will receive the user's new query, along with 3 articles from the web search result for that query.\
+  Answer the user with the most relevant information. After answering, cite your sources and provide the url."
+llm_format_output:
+  " \\
+  #Citing sources\
+  After giving your final answer, you will cite your sources the following way:\
+  'REFERENCES: \
+    Title of article -> url \
+    Title of article -> url \
+    etc...' "
