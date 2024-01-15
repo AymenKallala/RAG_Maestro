@@ -1,5 +1,36 @@
 # RAG - Maestro 
-This projects build a virutal bot that is able to answer any request you have by reading the most relevant research papers, summarizing them and citing them.
+![maestro](images/maestro.png)
+ RAG-Maestro is an up-to-date LLM assistant designed to provide clear and concise explanations of scientific concepts **and relevant papers**. As a Q&A bot, it does not keep track of your conversation and will treat each input independently.
+
+ RAG-Maestro is now [Live!](https://rag-maestro-o2wbip4gla-uc.a.run.app/)
+
+
+# Examples
+
+What is LLava?            |  Do you know what the Memformer is?
+:-------------------------:|:-------------------------:
+![llava](images/llava.png)  |  ![memformer](images/llava.png)
+
+# Implementation Details
+
+The bot is composed of three building blocks that work sequentially:
+
+### A Keywords extractor
+
+RAG-Maestro first tasks is to extract from your request the keywords to browse for. the [RAKE}(https://www.analyticsvidhya.com/blog/2021/10/rapid-keyword-extraction-rake-algorithm-in-natural-language-processing/) (Rapid Keyword Extraction Algorithm) from `nltk` is used.
+
+### A Paper browser
+
+Once the keywords extracted, they are used to retrieve the 5 most relevant papers from [arxiv.org](https://www.arxiv.org/). These papers are then downloaded and scrapped.
+
+To build the scraper, I used the open-source `arxiv` API and  `PyPDF2` to ease the pdf reading.
+
+### A RAG Pipeline ([Paper](https://arxiv.org/pdf/2005.11401.pdf))
+
+That retrieves the most relevant information from the scraped papers relatively to the query, and takes it as context to summarize. One of the main features I implemented (prompt engineering) is that the bot is *citing its sources*. Hence, it becomes possible to assess the veracity of the provided answer. The pipeline is using OpenAI LLMS (`embedding-v3` and `gpt-3.5-turbo`) to process the retrieval and the generation steps. Like every LLM, RAG-Maestro can be subject to hallucinations. **Making it citing the sources can help us to detect a hallucination**.
+
+
+I used [llama_index]( https://docs.llamaindex.ai/en/stable/) to build the RAG pipeline, specifically picked a "tree_summarizer" form query engine to generate the answer. All the hyperparameters are stored in an editable `config.yml` file.
 
 # Commands
 
@@ -20,39 +51,3 @@ In a command line:
 - run `streamlit run src/app.py`
 - Now open the 'External URL' in your browser. Enjoy the bot.
 ![Alt text](images/streamlit_app.png)
-
-
-**If none of the solutions above have worked for whatever reasons, I keep a low-price VM running and hosting the app at this address** : [Link to my running app](http://34.27.199.18:8501)
-
-# Tip Notes (Important)
-
-
-1. This bot is a Q&A bot, which means that it does not keep track of the conversation, but answers your queries one by one. Remember to "Clear the conversation" every once in a while to assure a better inference time.
-
-
-
-# Implementation Details
-
-The bot is composed of two building blocks that work sequentially:
-
-### A Scraper
-
-That takes your query as input and searches the web to find 5 relevant articles. In practice, it does not browse the whole web but only 2 websites (you can pick which one). Either [Investopedia](https://www.investopedia.com/) (a financial-only website) That can provide accurate answers on very specific questions, or [CNBC](https://www.cnbc.com/) that has a broader range of informations (it does not have to be financial, you can also find more information about socio-political phenomenons).
-
-To build the scraper, I used `duckducksearchgo` to browse the web and `BeautifulSoup` and `scrapy` to scrape the content of relevant articles.
-
-*NB*: I want to stress that I first tried to use `Selenium` and [archive](https://www.archive.is/) to scrape articles from any newspaper (even the one with paywalls) but got blocked by a google recaptcha that I could not manage to break. Hence I went for another solution that appeared to be lighter and faster and decided to focus on open websites.
-
-
-### A RAG Pipeline ([Paper](https://arxiv.org/pdf/2005.11401.pdf))
-
-That retrieves the most relevant information from the scraped articles relatively to the query, and takes it as context to summarize. One of the main features I implemented (prompt engineering) is that the bot is *citing its sources*. Hence, it becomes possible to assess the veracity of the provided answer. The pipeline is using OpenAI LLMS (`embedding-v3` and `gpt-3.5-turbo`) to process the retrieval and generation. Hence, it can be subject to hallucinations. Making it citing the sources can help us to detect a hallucination.
-
-Sometimes not enough information is found on CNBC, which can cause an hallucination. For instance, the bot claims here that LVMH performed well in the last Q4 and points us to an article. However, no mention of LVMH is done in this one... **It is important to verify coherence of the response by checking the sources**.
-
-
-I used [llama_index]( https://docs.llamaindex.ai/en/stable/) to build the RAG pipeline, specifically picked a "tree_summarizer" form query engine to generate the answer. All the hyperparameters are stored in an editable `config.yml` file.
-
-
-
-## Examples of Generated Answers
