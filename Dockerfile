@@ -5,7 +5,9 @@ WORKDIR /code
 COPY ./requirements.txt /code/requirements.txt
 COPY ./config.yml /code/config.yml
 COPY ./src /code/src/
-COPY ./images/mithril_security_company_logo.jpeg /code/images/mithril_security_company_logo.jpeg
+COPY ./.streamlit /code/.streamlit/
+COPY ./images/maestro.png /code/images/maestro.png
+COPY ./images/streamlit_app.png /code/images/streamlit_app.png
 
 EXPOSE 8501
 
