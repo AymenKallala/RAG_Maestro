@@ -1,15 +1,16 @@
 # RAG - Maestro 
 ![maestro](images/maestro.png)
- RAG-Maestro is an up-to-date LLM assistant designed to provide clear and concise explanations of scientific concepts **and relevant papers**. As a Q&A bot, it does not keep track of your conversation and will treat each input independently.
 
- RAG-Maestro is now [Live!](https://rag-maestro-o2wbip4gla-uc.a.run.app/)
+RAG-Maestro is an up-to-date LLM assistant designed to provide clear and concise explanations of scientific concepts **and relevant papers**. As a Q&A bot, it does not keep track of your conversation and will treat each input independently.
+
+<ins>**RAG-Maestro is now [Live!](https://rag-maestro-o2wbip4gla-uc.a.run.app/)**</ins>
 
 
 # Examples
 
 What is LLava?            |  Do you know what the Memformer is?
 :-------------------------:|:-------------------------:
-![llava](images/llava.png)  |  ![memformer](images/llava.png)
+![llava](images/llava.png)  |  ![memformer](images/memformer.png)
 
 # Implementation Details
 
