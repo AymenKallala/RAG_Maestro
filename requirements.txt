@@ -5,7 +5,6 @@ annotated-types==0.6.0
 anyio==4.2.0
 attrs==23.2.0
 Automat==22.10.0
-beautifulsoup4==4.12.2
 black==23.12.1
 blinker==1.7.0
 cachetools==5.3.2
@@ -21,7 +20,6 @@ curl-cffi==0.5.10
 dataclasses-json==0.6.3
 Deprecated==1.2.14
 distro==1.9.0
-duckduckgo_search==4.1.1
 filelock==3.13.1
 frozenlist==1.4.1
 fsspec==2023.12.2
@@ -82,8 +80,6 @@ requests==2.31.0
 requests-file==1.5.1
 rich==13.7.0
 rpds-py==0.16.2
-Scrapy==2.11.0
-selenium==4.16.0
 service-identity==23.1.0
 setuptools==69.0.3
 smmap==5.0.1

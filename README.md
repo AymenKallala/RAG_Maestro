@@ -1,5 +1,5 @@
-# Retrieval Augmented Financial Analyst (Financial GPT)
-Here is my solution to build a financial analyst assistant.
+# RAG - Maestro 
+This projects build a virutal bot that is able to answer any request you have by reading the most relevant research papers, summarizing them and citing them.
 
 # Commands
 
