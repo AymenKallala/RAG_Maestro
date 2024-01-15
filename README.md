@@ -20,7 +20,7 @@ The bot is composed of three building blocks that work sequentially:
 
 ### A Keywords extractor
 
-RAG-Maestro first tasks is to extract from your request the keywords to browse for. the [RAKE}(https://www.analyticsvidhya.com/blog/2021/10/rapid-keyword-extraction-rake-algorithm-in-natural-language-processing/) (Rapid Keyword Extraction Algorithm) from `nltk` is used.
+RAG-Maestro first tasks is to extract from your request the keywords to browse for. the [RAKE](https://www.analyticsvidhya.com/blog/2021/10/rapid-keyword-extraction-rake-algorithm-in-natural-language-processing/) (Rapid Keyword Extraction Algorithm) from `nltk` is used.
 
 ### A Paper browser
 
@@ -53,4 +53,3 @@ In a command line:
 - run `pip install -r requirements.txt`
 - run `streamlit run src/app.py`
 - Now open the 'External URL' in your browser. Enjoy the bot.
-![Alt text](images/streamlit_app.png)
