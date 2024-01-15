@@ -26,9 +26,9 @@ In a command line:
 
 # Tip Notes (Important)
 
-1. Once in the app, *you will have to provide your OPENAI API KEY* to query the bot, as I built my agent with the `gpt-3.5-turbo` model by default.  You can obtain an API key by logging into your OpenAI account and [creating a new API key](https://platform.openai.com/account/api-keys).
-2. This bot is a Q&A bot, which means that it does not keep track of the conversation, but answers your queries one by one. Remember to "Clear the conversation" every once in a while to assure a better inference time.
-3. You will be able to pick your source of information, the choice is between CNBC and Investopedia. The former give the agent a broder access and the ability to answer more general questions like _How was Apple performing lately?_ or _How can global markets be impacted by a war involving Iran and the US?_. Whereas the latter gives more specific financial details, and access to thorough analysis that can help answer precise questions like _What is happening to the US regional banks?_.
+
+1. This bot is a Q&A bot, which means that it does not keep track of the conversation, but answers your queries one by one. Remember to "Clear the conversation" every once in a while to assure a better inference time.
+
 
 
 # Implementation Details
@@ -50,13 +50,9 @@ That retrieves the most relevant information from the scraped articles relativel
 
 Sometimes not enough information is found on CNBC, which can cause an hallucination. For instance, the bot claims here that LVMH performed well in the last Q4 and points us to an article. However, no mention of LVMH is done in this one... **It is important to verify coherence of the response by checking the sources**.
 
-![Alt text](images/hallucination.png)
 
 I used [llama_index]( https://docs.llamaindex.ai/en/stable/) to build the RAG pipeline, specifically picked a "tree_summarizer" form query engine to generate the answer. All the hyperparameters are stored in an editable `config.yml` file.
 
 
 
 ## Examples of Generated Answers
-
-![Alt text](images/good_answer.png)
-![Alt text](images/good_answer_2.png)
