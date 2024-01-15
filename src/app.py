@@ -22,9 +22,9 @@ st.markdown(
 )
 st.divider()
 st.markdown(
-    "<a style='display: block; text-align: center;' href='https://aymenkallala.github.io/' target='_blank'> Aymen Kallala</a>",
-    unsafe_allow_html=True,
-)
+        "<center><i>RAG-Maestro is an up-to-date LLM assistant designed to provide clear and concise explanations of scientific concepts <b>and relevant papers</b>. As a Q&A bot, it does not keep track of your conversation and will treat each input independently.  Do not hesitate to clear the conversation once in a while! Hoping that RAG-Maestro will help get quick answers and expand your scientific knowledge.</center>",
+        unsafe_allow_html=True,
+    )
 st.divider()
 
 # ===================================
@@ -50,7 +50,7 @@ with st.sidebar:
         unsafe_allow_html=True,
     )
     st.markdown(
-        "<center><i>What is LLava?</i></center>",
+        "<center><i>What is GPT4?</i></center>",
         unsafe_allow_html=True,
     )
     st.markdown(
@@ -64,6 +64,10 @@ with st.sidebar:
     # st.sidebar.title("An agent that read and summarizethe the news for you")
     st.sidebar.image("images/maestro.png", use_column_width=True)
     clear_button = st.sidebar.button("Clear Conversation", key="clear")
+    st.markdown(
+    "<a style='display: block; text-align: center;' href='https://aymenkallala.github.io/' target='_blank'> Aymen Kallala</a>",
+    unsafe_allow_html=True,
+)
 # ==================================
 # Reset everything (Clear button)
 if clear_button:
@@ -74,7 +78,7 @@ if clear_button:
 response_container = st.container()  # container for message display
 
 if query := st.chat_input(
-    "What do you want to know? I will explain you the most relevant papers."
+    "What do you need to know? I will explain it and point you out interesting readings."
 ):
     st.session_state["past"].append(query)
     try:
