@@ -2,7 +2,7 @@
 RAG-Maestro is an up-to-date LLM assistant designed to provide clear and concise explanations of scientific concepts **and relevant papers**. As a Q&A bot, it does not keep track of your conversation and will treat each input independently.
 
 
-![maestro](images/maestro.png)
+![maestro](images/beautiful_maestro.png)
 
 
 <ins>**RAG-Maestro is now [Live!](https://rag-maestro-o2wbip4gla-uc.a.run.app/)**</ins>
