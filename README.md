@@ -37,15 +37,6 @@ I used [llama_index]( https://docs.llamaindex.ai/en/stable/) to build the RAG pi
 
 # Commands
 
-### Pull my app from the Docker Hub
-The easiest way to lauch my web app is to use Docker. (Assuming you have Docker Engine installed and a Docker Id to login).
-In a command line:
-
-- `docker login -u <username>`
-- `docker pull aymenkallala/mithril_technical_assignment:latest`
-- `docker run -p 8501:8501 docker.io/aymenkallala/mithril_technical_assignment:latest`
-- Now open the 'External URL' in your browser. Enjoy the bot.
-![Alt text](images/streamlit_app.png)
 
 ### Running the app locally from this repository
 - clone this repository
@@ -53,3 +44,5 @@ In a command line:
 - run `pip install -r requirements.txt`
 - run `streamlit run src/app.py`
 - Now open the 'External URL' in your browser. Enjoy the bot.
+
+![Alt text](images/streamlit_app.png)
