@@ -5,7 +5,7 @@ RAG-Maestro is an up-to-date LLM assistant designed to provide clear and concise
 ![maestro](images/beautiful_maestro_2.png)
 
 
-<ins>**RAG-Maestro is now [Live!](https://rag-maestro-o2wbip4gla-uc.a.run.app/)**</ins>
+<ins>**RAG-Maestro**</ins>
 
 
 # Examples
